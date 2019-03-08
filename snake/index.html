@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="game-container">
+    <canvas id="snake" style="background:#0A597A;border: 1px solid #ccc;margin: 0px auto;display: block"></canvas>
+    <div style="text-align: center">
+        <button id="start" style="width: 120px;height:32px;cursor: pointer">开始</button>
+    </div>
+</div>
+
+<script src="./snake.js"></script>
+<script>
+    const canvas = document.querySelectorAll('#snake')[0]
+    const btn = document.querySelectorAll('#start')[0]
+    window.onload = function () {
+        canvas.width = 1024
+        canvas.height = 600
+        let snake = new Snake(canvas)
+        btn.onclick = function () {
+            snake.start()
+        }
+    }
+
+</script>
+</body>
+</html>
